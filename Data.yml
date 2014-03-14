@@ -1,0 +1,20 @@
+--- &0 
+president: 
+  age: 1
+  name: test
+  school: *0
+schoolname: 默认
+schooltype: 512
+teacherlist: &4 
+  teachers: 
+    - !net.gratel.school_manager.Classes.Teacher
+      age: 1
+      name: test
+      students: 
+        students: 
+          - !net.gratel.school_manager.Classes.Student
+            age: 1
+            birthday: test
+            inSchool: *0
+            name: test
+            teach: *4
