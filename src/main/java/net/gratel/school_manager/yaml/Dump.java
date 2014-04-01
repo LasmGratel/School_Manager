@@ -10,6 +10,7 @@ package net.gratel.school_manager.yaml;
  *
  * @author 陈濯
  */
+import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -18,7 +19,27 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.ho.yaml.Yaml;
 import org.ho.yaml.YamlEncoder;
+import org.apache.commons.io.FileUtils;
 public class Dump {
+    public void dumpGson(File file,Object todump) throws Throwable{
+        try {
+            if(file.exists()){
+            Gson gson=new Gson();
+            
+            FileUtils.writeStringToFile(file,gson.toJson(todump),"UTF-8");
+            
+            }else{
+                file.createNewFile();
+               Gson gson=new Gson();
+            
+            FileUtils.writeStringToFile(file,gson.toJson(todump),"UTF-8");
+
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Dump.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+    }
     public void dump(File file,Object todump) throws IOException{
         try {
             if(file.exists()){

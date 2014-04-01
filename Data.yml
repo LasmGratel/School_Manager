@@ -3,18 +3,20 @@ president:
   age: 1
   name: test
   school: *0
-schoolname: 默认
-schooltype: 512
+schoolname: Normal
+schooltype: NORMAL_SCHOOL
 teacherlist: &4 
   teachers: 
-    - !net.gratel.school_manager.Classes.Teacher
+    - &6 !net.gratel.school_manager.Classes.Teacher
       age: 1
       name: test
       students: 
         students: 
-          - !net.gratel.school_manager.Classes.Student
+          - &10 !net.gratel.school_manager.Classes.Student
             age: 1
             birthday: test
             inSchool: *0
             name: test
             teach: *4
+          - *10
+    - *6

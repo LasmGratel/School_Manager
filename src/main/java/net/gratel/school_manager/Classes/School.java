@@ -6,12 +6,14 @@
 
 package net.gratel.school_manager.Classes;
 
+import net.gratel.school_manager.numbers.SchoolType;
+
 /**
  *
  * @author 陈濯
  */
 public class School {
-    private int schooltype;
+    private SchoolType schooltype;
     private String schoolname;
     private President president;
     private TeacherList teacherlist;
@@ -19,14 +21,14 @@ public class School {
     /**
      * @return the schooltype
      */
-    public int getSchooltype() {
+    public SchoolType getSchooltype() {
         return schooltype;
     }
 
     /**
      * @param schooltype the schooltype to set
      */
-    public void setSchooltype(int schooltype) {
+    public void setSchooltype(SchoolType schooltype) {
         this.schooltype = schooltype;
     }
 

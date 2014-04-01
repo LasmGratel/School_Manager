@@ -6,14 +6,49 @@
 
 package net.gratel.school_manager.numbers;
 
+import net.gratel.school_manager.Properties;
+
 /**
  *
  * @author 陈濯
  */
-public class SchoolType {
-    public static int PRIVATE_SCHOOL=1;
-    public static int PUBLIC_SCHOOL=2;
-    public static int GOV_SCHOOL=3;
-    public static int COMPANY_SCHOOL=4;
-    public static int OTHERTYPE_SCHOOL=512;
+public enum SchoolType {
+    OTHERTYPE_SCHOOL(0xffff,Properties.getLanguage("OtherType_School")),
+    NORMAL_SCHOOL(1,Properties.getLanguage("Normal_School"));
+    private int TypeID;
+    private String TypeName;
+
+    /**
+     * @return the TypeID
+     */
+    public int getTypeID() {
+        return TypeID;
+    }
+
+    /**
+     * @param TypeID the TypeID to set
+     */
+    public void setTypeID(int TypeID) {
+        this.TypeID = TypeID;
+    }
+
+    /**
+     * @return the TypeName
+     */
+    public String getTypeName() {
+        return TypeName;
+    }
+
+    /**
+     * @param TypeName the TypeName to set
+     */
+    public void setTypeName(String TypeName) {
+        this.TypeName = TypeName;
+    }
+
+    private SchoolType(int TypeID, String TypeName) {
+        this.TypeID = TypeID;
+        this.TypeName = TypeName;
+    }
+    
 }
