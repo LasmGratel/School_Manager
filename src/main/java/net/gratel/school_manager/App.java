@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import net.gratel.school_manager.Classes.*;
+import net.gratel.school_manager.connection.Dao;
 import net.gratel.school_manager.numbers.SchoolType;
 import net.gratel.school_manager.weather.getWeather;
 import net.gratel.school_manager.yaml.Clear;
@@ -53,6 +54,7 @@ public class App extends javax.swing.JFrame {
         student.setBirthday("test");
         student.setInSchool(school);
         student.setTeach(teachers);
+        
         initComponents();
     }
 
@@ -127,6 +129,7 @@ public class App extends javax.swing.JFrame {
         jMenuItem9.setText("jMenuItem9");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFont(new java.awt.Font("Adobe 黑体 Std R", 0, 10)); // NOI18N
 
         jLabel1.setText("学校管理系统");
 
@@ -415,7 +418,11 @@ public class App extends javax.swing.JFrame {
             dump.dumpGson(new File("data.json"), school);
         } catch (IOException ex) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            Dao dao=new Dao();
+            dao.setLog("IOException", ex.getMessage());
         } catch (Throwable ex) {
+            Dao dao=new Dao();
+            dao.setLog("Throwable", ex.getMessage());
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
