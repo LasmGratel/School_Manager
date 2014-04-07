@@ -62,5 +62,10 @@ public class Teacher {
     public void setStudents(Students students) {
         this.students = students;
     }
+
+    @Override
+    public String toString() {
+        return "Teacher{" + "name=" + name + ", age=" + age + '}';
+    }
     
 }

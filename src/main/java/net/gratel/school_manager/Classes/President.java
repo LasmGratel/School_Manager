@@ -63,5 +63,10 @@ public class President {
     public void setSchool(School school) {
         this.school = school;
     }
+
+    @Override
+    public String toString() {
+        return "President{" + "name=" + name + ", age=" + age + ", school=" + school + '}';
+    }
     
 }

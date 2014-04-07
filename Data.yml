@@ -7,16 +7,14 @@ schoolname: Normal
 schooltype: NORMAL_SCHOOL
 teacherlist: &4 
   teachers: 
-    - &6 !net.gratel.school_manager.Classes.Teacher
+    - !net.gratel.school_manager.Classes.Teacher
       age: 1
       name: test
       students: 
         students: 
-          - &10 !net.gratel.school_manager.Classes.Student
+          - !net.gratel.school_manager.Classes.Student
             age: 1
             birthday: test
             inSchool: *0
             name: test
             teach: *4
-          - *10
-    - *6

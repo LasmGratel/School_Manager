@@ -8,15 +8,12 @@ package net.gratel.school_manager.weather;
 
 import com.google.gson.Gson;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import javax.swing.ImageIcon;
 /**
  *

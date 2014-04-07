@@ -12,7 +12,8 @@ import net.gratel.school_manager.Properties;
  *
  * @author 陈濯
  */
-public enum SchoolType {
+
+public enum SchoolType  {
     OTHERTYPE_SCHOOL(0xffff,Properties.getLanguage("OtherType_School")),
     NORMAL_SCHOOL(1,Properties.getLanguage("Normal_School"));
     private int TypeID;

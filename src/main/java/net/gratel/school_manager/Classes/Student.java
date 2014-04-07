@@ -86,5 +86,11 @@ public class Student {
     public void setInSchool(School inSchool) {
         this.inSchool = inSchool;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" + "age=" + age + ", birthday=" + birthday + ", name=" + name + ", teach=" + teach + ", inSchool=" + inSchool + '}';
+    }
+
     
 }

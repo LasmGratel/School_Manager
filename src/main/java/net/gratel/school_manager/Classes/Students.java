@@ -58,5 +58,13 @@ public class Students {
     public void setStudents(Student student) {
         students.add(student);
     }
+
+    @Override
+    public String toString() {
+        return "Students{" + "StudentLength=" + StudentLength + ", students=" + students + '}';
+    }
+
+    
+    
     
 }

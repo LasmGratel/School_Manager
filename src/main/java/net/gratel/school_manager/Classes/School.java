@@ -73,5 +73,11 @@ public class School {
     public void setTeacherlist(TeacherList teacherlist) {
         this.teacherlist = teacherlist;
     }
+
+    @Override
+    public String toString() {
+        return "School{" + "schooltype=" + schooltype + ", schoolname=" + schoolname + ", president=" + president + ", teacherlist=" + teacherlist + '}';
+    }
+
     
 }
