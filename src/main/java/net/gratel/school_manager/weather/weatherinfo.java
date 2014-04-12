@@ -61,8 +61,9 @@ public class weatherinfo {
     }
     @Override
     public String toString() {
-        return Properties.getLanguage("temp1")+"="
-                + temp1 + ','+Properties.getLanguage("temp2")+':'+temp2 + ',' + Properties.getLanguage("weather")+':'+weather
+        return ""
+        //return //Properties.getLanguage("temp1")+"="
+               // + temp1 + ','+Properties.getLanguage("temp2")+':'+temp2 + ',' + Properties.getLanguage("weather")+':'+weather
                 ;
     }
     

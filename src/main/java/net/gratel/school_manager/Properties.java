@@ -37,22 +37,6 @@ public class Properties {
      * @return
      * 
      */ 
-    public static String getLanguage(String key){
-        java.util.Properties properties=new java.util.Properties();
-        try {
-            properties.load(new BufferedReader(new FileReader(new File(getProperties("language")+".properties"))));
-            return properties.getProperty(key);
-        } catch (IOException  ex) {
-            try {
-                new File(getProperties("language")+".properties").createNewFile();
-                properties.load(new BufferedReader(new FileReader(new File(getProperties("language")+".properties"))));
-                Logger.getLogger(Properties.class.getName()).log(Level.SEVERE, null, ex);
-                return properties.getProperty(key);
-            } catch (IOException ex1) {
-                
-                Logger.getLogger(Properties.class.getName()).log(Level.SEVERE, null, ex1);
-                return ex1.getMessage();
-            }
-        }
-    }
+    
+    
 }

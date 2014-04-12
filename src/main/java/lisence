@@ -1,0 +1,11 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}©2014 Gratel Team.
+${licensePrefix}Anybody can modify that things 
+${licensePrefix}BUT NOT CHANGE GENERAL THINGS.
+${licensePrefix}and this project is under the LGPL3.
+${licensePrefix}(http://www.gnu.org/licenses/lgpl.html)
+<#if licenseLast??>
+${licenseLast}
+</#if>

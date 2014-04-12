@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package net.gratel.school_manager;
 
@@ -18,6 +14,7 @@ import net.gratel.school_manager.Classes.*;
 import net.gratel.school_manager.numbers.SchoolType;
 import net.gratel.school_manager.yaml.Clear;
 import net.gratel.school_manager.yaml.Dump;
+
 public class App extends javax.swing.JFrame {
     School school=new School();
     Students students=new Students();
