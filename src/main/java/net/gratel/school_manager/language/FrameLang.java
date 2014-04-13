@@ -31,6 +31,7 @@ public class FrameLang implements net.gratel.school_manager.api.LanguageAPI{
     public String toString(int value){
         List<String> list=new ArrayList<>();
         UseLang.getProperties("");
+        return "";
     }
     
 }
