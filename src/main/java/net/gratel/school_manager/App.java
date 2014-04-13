@@ -14,7 +14,7 @@ import net.gratel.school_manager.Classes.*;
 import net.gratel.school_manager.numbers.SchoolType;
 import net.gratel.school_manager.yaml.Clear;
 import net.gratel.school_manager.yaml.Dump;
-
+import net.gratel.school_manager.language.*;
 public class App extends javax.swing.JFrame {
     School school=new School();
     Students students=new Students();
@@ -22,7 +22,7 @@ public class App extends javax.swing.JFrame {
     President president=new President();
     TeacherList teachers=new TeacherList();
     Teacher teacher=new Teacher();
-    
+    FrameLang lang=new FrameLang();
     /**
      * Creates new form MainFrame
      * @throws java.io.IOException
@@ -126,7 +126,8 @@ public class App extends javax.swing.JFrame {
         jMenuItem9.setText("jMenuItem9");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("学校管理系统");
+        setTitle(lang.toString(0)
+        );
         setBackground(new java.awt.Color(0, 0, 240));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFont(new java.awt.Font("Adobe 黑体 Std R", 0, 10)); // NOI18N
@@ -204,7 +205,7 @@ public class App extends javax.swing.JFrame {
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addContainerGap(61, Short.MAX_VALUE)
+                .addContainerGap(129, Short.MAX_VALUE)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -368,7 +369,7 @@ public class App extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

@@ -19,6 +19,9 @@ import net.gratel.school_manager.exception.PropertiesException;
  */
 public class FrameLang implements net.gratel.school_manager.api.LanguageAPI{
     private Properties p;
+    public FrameLang(){
+        p=new UseLang().getProperties();
+    }
     @Override
     public void setProperties(Properties p) {
         this.p=p;
@@ -30,7 +33,25 @@ public class FrameLang implements net.gratel.school_manager.api.LanguageAPI{
     }
     public String toString(int value){
         List<String> list=new ArrayList<>();
-        UseLang.getProperties("");
+        list.add(p.getProperty("title"));
+        list.add(p.getProperty("file"));
+        list.add(p.getProperty("read"));
+        list.add(p.getProperty("write"));
+        list.add(p.getProperty("clear"));
+        list.add(p.getProperty("exit"));
+        list.add(p.getProperty("create"));
+        list.add(p.getProperty("modifyPresident"));
+        list.add(p.getProperty("seePresident"));
+        list.add(p.getProperty("addStudents"));
+        list.add(p.getProperty("addStudent"));
+        list.add(p.getProperty("delStudent"));
+        list.add(p.getProperty("addTeachers"));
+        list.add(p.getProperty("addTeacher"));
+        list.add(p.getProperty("delTeacher"));
+        list.add(p.getProperty("name"));
+        list.add(p.getProperty("age"));
+        list.add(p.getProperty("birthday"));
+        list.add(p.getProperty("teachername"));
         return "";
     }
     
