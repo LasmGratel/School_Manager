@@ -15,6 +15,7 @@ import net.gratel.school_manager.numbers.SchoolType;
 import net.gratel.school_manager.yaml.Clear;
 import net.gratel.school_manager.yaml.Dump;
 import net.gratel.school_manager.language.*;
+import org.apache.logging.log4j.LogManager;
 public class App extends javax.swing.JFrame {
     School school=new School();
     Students students=new Students();
@@ -23,6 +24,8 @@ public class App extends javax.swing.JFrame {
     TeacherList teachers=new TeacherList();
     Teacher teacher=new Teacher();
     FrameLang lang=new FrameLang();
+    static org.apache.logging.log4j.Logger logger=LogManager.getLogger();
+    
     /**
      * Creates new form MainFrame
      * @throws java.io.IOException
@@ -30,7 +33,9 @@ public class App extends javax.swing.JFrame {
     
     public App() throws IOException, Throwable {
         
-
+        logger.entry();
+        
+        logger.trace("Loading Default Settings...");
         net.gratel.school_manager.Thread.thread1 thread=new net.gratel.school_manager.Thread.thread1();
         thread.start();
         
@@ -51,8 +56,9 @@ public class App extends javax.swing.JFrame {
         student.setBirthday("test");
         student.setInSchool(school);
         student.setTeach(teachers);
-        
+        logger.trace("Default Data Loaded.");
         initComponents();
+        
     }
 
     /**
@@ -392,7 +398,7 @@ public class App extends javax.swing.JFrame {
             dump.dump(new File("Data.yml"), school);
         } catch (IOException ex) {
             setError(ex.getMessage());
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
             
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -408,6 +414,7 @@ public class App extends javax.swing.JFrame {
             president.setName(jTextField1.getText());
         }else{
             setError("名称和年龄必须填写");
+            
         }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
     @Override
@@ -472,7 +479,7 @@ public class App extends javax.swing.JFrame {
             // TODO add your handling code here:
             Clear.clear();
         } catch (IOException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         }
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
@@ -512,24 +519,19 @@ public class App extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(App.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(App.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(App.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(App.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.error(ex.getMessage());
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 try {
                     new App().setVisible(true);
                 } catch (Throwable ex) {
-                    Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());
                 }
             }
         });

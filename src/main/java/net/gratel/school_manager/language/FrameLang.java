@@ -33,6 +33,7 @@ public class FrameLang implements net.gratel.school_manager.api.LanguageAPI{
     }
     public String toString(int value){
         List<String> list=new ArrayList<>();
+        
         list.add(p.getProperty("title"));
         list.add(p.getProperty("file"));
         list.add(p.getProperty("read"));

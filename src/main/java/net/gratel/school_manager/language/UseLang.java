@@ -15,17 +15,16 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.apache.commons.io.IOUtils;
-
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 /**
  *
  * @author 陈濯
  */
 public class UseLang implements net.gratel.school_manager.api.LanguageAPI{
 private Properties p=new Properties();
-    
+    Logger logger=LogManager.getLogger("[STDERR]");
     /**
      *
      * @param p
@@ -46,16 +45,16 @@ private Properties p=new Properties();
     try {
        
     try {
-        p.load(new FileInputStream(new File("settings.properties")));
+        p.load(IOUtils.toInputStream("settings.properties","UTF-8"));
     } catch (IOException ex) {
-        Logger.getLogger(UseLang.class.getName()).log(Level.SEVERE, null, ex);
+        logger.error(ex.getMessage());
     }
     
         Properties lang=new Properties();
-        lang.load(new FileInputStream(new File(p.getProperty("language")+".properties")));
+        lang.load(IOUtils.toInputStream(p.getProperty("language")+".properties","UTF-8"));
         return lang;
     } catch (IOException ex) {
-        Logger.getLogger(UseLang.class.getName()).log(Level.SEVERE, null, ex);
+        logger.error(ex.getMessage());
     }
     return p;
     }
