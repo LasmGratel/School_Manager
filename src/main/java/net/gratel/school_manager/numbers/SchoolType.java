@@ -7,6 +7,7 @@
 package net.gratel.school_manager.numbers;
 
 import net.gratel.school_manager.Properties;
+import net.gratel.school_manager.api.SchoolTypeAPI;
 
 /**
  *
@@ -22,6 +23,9 @@ public enum SchoolType  {
     /**
      * @return the TypeID
      */
+    public Enum getEnum(){
+        SchoolTypeAPI.class.getConstructors();
+     }
     public int getTypeID() {
         return TypeID;
     }
