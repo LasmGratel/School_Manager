@@ -161,6 +161,14 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem13ActionPerformed"/>
                   </Events>
                 </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem13">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x67e5;&#x770b;&#x540c;&#x5b66;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem13ActionPerformed"/>
+                  </Events>
+                </MenuItem>
               </SubComponents>
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu13">
@@ -180,9 +188,12 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x5220;&#x9664;&#x4e00;&#x540d;&#x8001;&#x5e08;"/>
                   </Properties>
+<<<<<<< HEAD
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
+=======
+>>>>>>> origin/master
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItem14">
                   <Properties>
@@ -358,7 +369,11 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
                   <EmptySpace pref="95" max="32767" attributes="0"/>
+=======
+                  <EmptySpace pref="61" max="32767" attributes="0"/>
+>>>>>>> origin/master
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
