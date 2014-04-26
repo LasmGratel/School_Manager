@@ -6,10 +6,8 @@
  * (http://www.gnu.org/licenses/lgpl.html)
  */
 
-package net.gratel.school_manager.Thread;
-
-import net.gratel.school_manager.App;
-
+package net.gratel.school_manager.threads;
+import net.gratel.school_manager.log.Logger;
 /**
  *
  * @author 陈濯
@@ -20,6 +18,7 @@ public class submit {
             if(type){
                 switch(c.getName()){
                     case "Student":
+                    
                     break;
                 }
             }

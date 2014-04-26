@@ -6,7 +6,6 @@
 
 package net.gratel.school_manager.numbers;
 
-import net.gratel.school_manager.Properties;
 import net.gratel.school_manager.api.SchoolTypeAPI;
 
 /**
@@ -21,9 +20,9 @@ public enum SchoolType  {
     private String TypeName;
 
     /**
-     * @return the TypeID
+     * There code is in develop.
      */
-    public Enum getEnum(){
+    public void getEnum(){
         SchoolTypeAPI.class.getConstructors();
      }
     public int getTypeID() {

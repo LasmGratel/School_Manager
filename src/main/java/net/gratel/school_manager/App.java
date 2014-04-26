@@ -6,17 +6,18 @@ package net.gratel.school_manager;
  *
  * @author 陈濯
  */
+import net.gratel.school_manager.schools.Teacher;
+import net.gratel.school_manager.schools.Student;
+import net.gratel.school_manager.schools.Students;
+import net.gratel.school_manager.schools.President;
+import net.gratel.school_manager.schools.School;
+import net.gratel.school_manager.schools.TeacherList;
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import net.gratel.school_manager.Classes.*;
 import net.gratel.school_manager.numbers.SchoolType;
-import net.gratel.school_manager.yaml.Clear;
-import net.gratel.school_manager.yaml.Dump;
+
 import net.gratel.school_manager.language.*;
 import org.apache.logging.log4j.LogManager;
-import org.lwjgl.openal.*;
 public class App extends javax.swing.JFrame {
     School school=new School();
     Students students=new Students();
@@ -31,16 +32,14 @@ public class App extends javax.swing.JFrame {
      * Creates new form MainFrame
      * @throws java.io.IOException
      */
-    
+    private void loadDefault(){
+        
+       
+    }
     public App() throws IOException, Throwable {
         
         logger.entry();
-        
-        logger.trace("Loading Default Settings...");
-        net.gratel.school_manager.Thread.thread1 thread=new net.gratel.school_manager.Thread.thread1();
-        thread.start();
-        
-        president.setSchool(school);
+         president.setSchool(school);
         school.setPresident(president);
         school.setSchoolname("Normal");
         school.setSchooltype(SchoolType.NORMAL_SCHOOL);
@@ -57,7 +56,8 @@ public class App extends javax.swing.JFrame {
         student.setBirthday("test");
         student.setInSchool(school);
         student.setTeach(teachers);
-        logger.trace("Default Data Loaded.");
+        
+        
         initComponents();
         
     }
@@ -214,11 +214,11 @@ public class App extends javax.swing.JFrame {
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
-<<<<<<< HEAD
+
                 .addContainerGap(95, Short.MAX_VALUE)
-=======
+
                 .addContainerGap(61, Short.MAX_VALUE)
->>>>>>> origin/master
+
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -416,14 +416,14 @@ public class App extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        Dump dump=new Dump();
-        try {
-            dump.dump(new File("Data.yml"), school);
-        } catch (IOException ex) {
-            setError(ex.getMessage());
-            logger.error(ex.getMessage());
-            
-        }
+//        Dump dump=new Dump();
+//        try {
+//            dump.dump(new File("Data.yml"), school);
+//        } catch (IOException ex) {
+//            setError(ex.getMessage());
+//            logger.error(ex.getMessage());
+//            
+//        }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
     public void setError(String text){
         jLabel8.setText("错误:"+text);
@@ -495,12 +495,12 @@ public class App extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        try {
-            // TODO add your handling code here:
-            Clear.clear();
-        } catch (IOException ex) {
-            logger.error(ex.getMessage());
-        }
+       // try {
+            //Delete....
+            
+        //} catch (IOException ex) {
+          //  logger.error(ex.getMessage());
+     //   }
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseClicked

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package net.gratel.school_manager.Thread;
+package net.gratel.school_manager.threads;
 
 import java.net.Socket;
 
