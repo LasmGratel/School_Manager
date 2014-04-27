@@ -6,17 +6,17 @@ package net.gratel.school_manager;
  *
  * @author 陈濯
  */
-import net.gratel.school_manager.schools.Teacher;
-import net.gratel.school_manager.schools.Student;
-import net.gratel.school_manager.schools.Students;
-import net.gratel.school_manager.schools.President;
-import net.gratel.school_manager.schools.School;
-import net.gratel.school_manager.schools.TeacherList;
-import java.io.File;
-import java.io.IOException;
-import net.gratel.school_manager.numbers.SchoolType;
+import net.gratel.school_manager.files.Lines;
+import net.gratel.school_manager.files.Write;
 
 import net.gratel.school_manager.language.*;
+import net.gratel.school_manager.numbers.SchoolType;
+import net.gratel.school_manager.schools.President;
+import net.gratel.school_manager.schools.School;
+import net.gratel.school_manager.schools.Student;
+import net.gratel.school_manager.schools.Students;
+import net.gratel.school_manager.schools.Teacher;
+import net.gratel.school_manager.schools.TeacherList;
 import org.apache.logging.log4j.LogManager;
 public class App extends javax.swing.JFrame {
     School school=new School();
@@ -30,13 +30,10 @@ public class App extends javax.swing.JFrame {
     
     /**
      * Creates new form MainFrame
-     * @throws java.io.IOException
+     * 
      */
-    private void loadDefault(){
-        
-       
-    }
-    public App() throws IOException, Throwable {
+    
+    public App() {
         
         logger.entry();
          president.setSchool(school);
@@ -424,7 +421,14 @@ public class App extends javax.swing.JFrame {
 //            logger.error(ex.getMessage());
 //            
 //        }
+        Write.WriteToFile("write.text", Lines.getList());
+        for(int i=0;i<=Lines.getList().size();i++){
+            addText(Lines.getList().get(i));
+        }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+    public School getSchool(){
+        return school;
+    }
     public void setError(String text){
         jLabel8.setText("错误:"+text);
     }

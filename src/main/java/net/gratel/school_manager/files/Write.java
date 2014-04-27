@@ -8,11 +8,14 @@
 
 package net.gratel.school_manager.files;
 import java.io.BufferedOutputStream;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.Collection;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.io.IOUtils;
@@ -21,22 +24,12 @@ import org.apache.commons.io.IOUtils;
  * @author 陈濯
  */
 public class Write {
-    public static void WriteToFile(String file,Object o){
+    
+    public static void WriteToFile(String file,List<String> line){
         try {
             if(new File(file).exists()){
-            IOUtils.write(o.toString(), new BufferedOutputStream(new FileOutputStream(new File(file))), "UTF-8");
-            }else{
-                new File(file).createNewFile();
-                WriteToFile(file,o);
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(Write.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    public static void WriteToFile(String file,Collection line){
-        try {
-            if(new File(file).exists()){
-            IOUtils.writeLines(line, null, new FileWriter(new File(file)));
+                System.out.println("Writeing...");
+            IOUtils.writeLines(line, null, new BufferedOutputStream(new FileOutputStream(new File(file))), "UTF-8");
             
             }else{
                 new File(file).createNewFile();
