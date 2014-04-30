@@ -8,7 +8,6 @@
 
 package net.gratel.school_manager.files;
 
-import io.netty.buffer.ByteBuf;
 import java.util.ArrayList;
 import java.util.List;
 import net.gratel.school_manager.App;
@@ -33,6 +32,7 @@ public class Lines {
         l.add(spc(8)+"name:"+p.getName());
         l.add(spc(8)+"age:"+p.getAge());
         l.add(spc(4)+"TeacherList:");
+        
         for(int i=0;i<=ts.getTeacherLength();i++){
             Teacher te=ts.getTeachers(i);
             l.add(spc(8)+"Teacher #"+i+':');

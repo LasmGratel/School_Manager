@@ -9,23 +9,32 @@
 package net.gratel.school_manager.files;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.commons.io.IOUtils;
+import org.apache.commons.io.FileUtils;
 
 /**
  *
  * @author 陈濯
  */
 public class Read {
-    public static Object ReadFromFile(String file){
+    public static List<String> ReadFromFile(String file){
         try {
-            return IOUtils.readLines(new FileInputStream(new File(file)), "UTF-8");
+            List<String> list=FileUtils.readLines(new File(file));
+            List<String> noklist=new ArrayList<>();
+            int size=list.size()-1;
+            for(int i=0;i<=size;i++){
+                noklist.add(list.get(i).trim());
+            }
+            return noklist;
         } catch (IOException ex) {
             Logger.getLogger(Read.class.getName()).log(Level.SEVERE, null, ex);
-            return "Error";
+            ArrayList<String> error=new ArrayList<>();
+            error.add("Read Failed!");
+            return error;
         }
     }
 }

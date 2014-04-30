@@ -1,0 +1,14 @@
+School:
+     name:Normal
+     president:
+         name:test
+         age:1
+     TeacherList:
+         Teacher #0:
+             name:test
+             age:1
+             students:
+             Student #0
+                 name:test
+                 age:1
+                 birthday:test

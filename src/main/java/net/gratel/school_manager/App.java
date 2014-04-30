@@ -6,11 +6,14 @@ package net.gratel.school_manager;
  *
  * @author 陈濯
  */
+import java.util.List;
 import net.gratel.school_manager.files.Lines;
+import net.gratel.school_manager.files.Read;
 import net.gratel.school_manager.files.Write;
 
 import net.gratel.school_manager.language.*;
 import net.gratel.school_manager.numbers.SchoolType;
+import net.gratel.school_manager.plugins.LoadPlugin;
 import net.gratel.school_manager.schools.President;
 import net.gratel.school_manager.schools.School;
 import net.gratel.school_manager.schools.Student;
@@ -77,6 +80,7 @@ public class App extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem18 = new javax.swing.JMenuItem();
         weather = new javax.swing.JLabel();
         img1 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -112,6 +116,11 @@ public class App extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
 
         jLabel2.setText("jLabel2");
 
@@ -130,6 +139,8 @@ public class App extends javax.swing.JFrame {
         jMenuItem8.setText("jMenuItem8");
 
         jMenuItem9.setText("jMenuItem9");
+
+        jMenuItem18.setText("jMenuItem18");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle(lang.toString(0)
@@ -206,16 +217,12 @@ public class App extends javax.swing.JFrame {
                             .addComponent(jTextField5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5)))
-                .addGap(0, 247, Short.MAX_VALUE))
+                .addGap(0, 49, Short.MAX_VALUE))
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
-
-                .addContainerGap(95, Short.MAX_VALUE)
-
-                .addContainerGap(61, Short.MAX_VALUE)
-
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -246,7 +253,13 @@ public class App extends javax.swing.JFrame {
 
         jMenu2.setText("文件");
 
-        jMenuItem10.setText("读入Data.yaml");
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem10.setText("读入");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem10);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
@@ -358,6 +371,32 @@ public class App extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu8);
 
+        jMenu4.setText("插件(Alpha)");
+
+        jMenuItem15.setText("在jar所放目录搜寻插件并加载");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem15);
+
+        jMenuItem16.setText("选择插件");
+        jMenu4.add(jMenuItem16);
+
+        jMenuItem17.setText("删除某项插件");
+        jMenu4.add(jMenuItem17);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("插件列表(Alpha)");
+        jMenu5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu5ActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jMenu5);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -365,18 +404,22 @@ public class App extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(97, 97, 97)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 247, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(img1)
-                            .addComponent(weather))
-                        .addGap(2, 2, 2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(280, 280, 280))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(img1)
+                                    .addComponent(weather))
+                                .addGap(2, 2, 2))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(280, 280, 280))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -385,16 +428,12 @@ public class App extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(82, 82, 82)
                         .addComponent(weather)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(img1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jLabel13))))
+                        .addGap(18, 18, 18)
+                        .addComponent(img1))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -422,7 +461,8 @@ public class App extends javax.swing.JFrame {
 //            
 //        }
         Write.WriteToFile("write.text", Lines.getList());
-        for(int i=0;i<=Lines.getList().size();i++){
+        int size=Lines.getList().size();
+        for(int i=0;i<=size-1;i++){
             addText(Lines.getList().get(i));
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -460,9 +500,9 @@ public class App extends javax.swing.JFrame {
         }
         return false;
     }
-    public void addText(String...text){
-        for(String str:text){
-            jTextArea1.append(str+'\n');
+    public void addText(Object...text){
+        for(Object str:text){
+            jTextArea1.append((String)str+'\n');
         }
         
     }
@@ -514,8 +554,7 @@ public class App extends javax.swing.JFrame {
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
         // TODO add your handling code here:
-        jTextField1.setText(president.getName());
-        jTextField2.setText(Integer.toString(president.getAge()));
+        addText("校长名称:",president.getName(),"校长年龄：",Integer.toString(president.getAge()));
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -541,6 +580,29 @@ public class App extends javax.swing.JFrame {
             addText(students.getStudents(i).toString());
         }
     }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+        List<String> list=Read.ReadFromFile("write.text");
+        int size=list.size();
+        StringBuilder sb=null;
+        for(int i=0;i<=size;i++){
+            sb=new StringBuilder(list.get(i));
+            if(list.get(i).startsWith("name:")){
+                sb.delete(1, 5);
+                school.setSchoolname(sb.toString());
+            }
+        }
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        // TODO add your handling code here:
+        LoadPlugin.LoadPluginAtBase();
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -594,6 +656,8 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu16;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    public static javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
@@ -605,6 +669,10 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     public javax.swing.JMenuItem jMenuItem4;

@@ -66,7 +66,7 @@ public class President {
 
     @Override
     public String toString() {
-        return "President{" + "name=" + name + ", age=" + age + ", school=" + school + '}';
+        return "President{" + "name=" + name + ", age=" + age + '}';
     }
     
 }
