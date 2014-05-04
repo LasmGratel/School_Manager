@@ -22,9 +22,8 @@ public enum SchoolType  {
     /**
      * There code is in develop.
      */
-    public void getEnum(){
-        SchoolTypeAPI.class.getConstructors();
-     }
+    
+    
     public int getTypeID() {
         return TypeID;
     }
@@ -50,9 +49,9 @@ public enum SchoolType  {
         this.TypeName = TypeName;
     }
 
-    private SchoolType(int TypeID, String TypeName) {
-        this.TypeID = TypeID;
-        this.TypeName = TypeName;
+    SchoolType(int TypeID, String TypeName) {
+        
+        
     }
     
 }

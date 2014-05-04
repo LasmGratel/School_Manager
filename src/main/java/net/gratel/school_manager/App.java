@@ -7,6 +7,7 @@ package net.gratel.school_manager;
  * @author 陈濯
  */
 import java.util.List;
+import javax.swing.JFileChooser;
 import net.gratel.school_manager.files.Lines;
 import net.gratel.school_manager.files.Read;
 import net.gratel.school_manager.files.Write;
@@ -121,6 +122,7 @@ public class App extends javax.swing.JFrame {
         jMenuItem16 = new javax.swing.JMenuItem();
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
 
         jLabel2.setText("jLabel2");
 
@@ -222,7 +224,7 @@ public class App extends javax.swing.JFrame {
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(78, Short.MAX_VALUE)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -251,6 +253,8 @@ public class App extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+        jMenu2.setForeground(javax.swing.UIManager.getDefaults().getColor("MenuItem.selectionBackground"));
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/textpurepack/file.png"))); // NOI18N
         jMenu2.setText("文件");
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
@@ -281,6 +285,7 @@ public class App extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/textpurepack/new.png"))); // NOI18N
         jMenu8.setText("创建");
         jMenu8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -371,6 +376,7 @@ public class App extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu8);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/textpurepack/plugin.png"))); // NOI18N
         jMenu4.setText("插件(Alpha)");
 
         jMenuItem15.setText("在jar所放目录搜寻插件并加载");
@@ -382,6 +388,11 @@ public class App extends javax.swing.JFrame {
         jMenu4.add(jMenuItem15);
 
         jMenuItem16.setText("选择插件");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem16);
 
         jMenuItem17.setText("删除某项插件");
@@ -397,6 +408,9 @@ public class App extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu5);
 
+        jMenu6.setText("插件选项(Alpha)");
+        jMenuBar1.add(jMenu6);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -407,19 +421,13 @@ public class App extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 247, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel13)
+                        .addGap(418, 418, 418)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(img1)
-                                    .addComponent(weather))
-                                .addGap(2, 2, 2))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(280, 280, 280))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(img1)
+                            .addComponent(weather)))
+                    .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -585,7 +593,7 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
         List<String> list=Read.ReadFromFile("write.text");
         int size=list.size();
-        StringBuilder sb=null;
+        StringBuilder sb;
         for(int i=0;i<=size;i++){
             sb=new StringBuilder(list.get(i));
             if(list.get(i).startsWith("name:")){
@@ -603,6 +611,13 @@ public class App extends javax.swing.JFrame {
     private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu5ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fc=new JFileChooser();
+        fc.showOpenDialog(null);
+        LoadPlugin.LoadPluginAtSelectFiles(fc.getSelectedFiles());
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -654,12 +669,13 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu13;
     private javax.swing.JMenu jMenu16;
-    private javax.swing.JMenu jMenu2;
+    public static javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     public static javax.swing.JMenu jMenu5;
+    public static javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
+    public static javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;

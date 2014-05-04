@@ -71,5 +71,10 @@
       <artifactId>commons-io</artifactId>
       <version>2.4</version>
     </dependency>
+    <dependency>
+      <groupId>net.gratel</groupId>
+      <artifactId>School_Manager_API</artifactId>
+      <version>Alpha0.0.1</version>
+    </dependency>
   </dependencies>
 </project>
