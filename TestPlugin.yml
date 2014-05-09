@@ -1,2 +1,2 @@
 ﻿name:测试插件
-class: net.gratel.school_manager.plugins.SystemOutPlugin
+class: tk.gratelteam.school_manager.plugins.SystemOutPlugin
