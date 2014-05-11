@@ -91,8 +91,6 @@ public class App extends javax.swing.JFrame {
             try {  
                 t.add(trayIcon);  
             } catch (AWTException e1) {  
-                e1.printStackTrace(); 
-                
             }
         initComponents();
         
