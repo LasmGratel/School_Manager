@@ -1,8 +1,3 @@
 School_Manager
-==============
-
-<<<<<<< HEAD
+https://travis-ci.org/LasmGratel/School_Manager.svg?branch=master
 Use this program to manage school.Release is at https://github.com/LasmGratel/School_Manager_Release
-=======
-使用它来管理你的学校！
->>>>>>> origin/noYaml
